@@ -46,18 +46,20 @@ import Download from "../IndexSections/Download.jsx";
 const Landing = (props) => {
   const [state, setState] = useState({})
   const refs = useRef()
-  useEffect(() => {
-    if (document) {
+  // useEffect(() => {
+  //   if (document) {
     
-      document.documentElement.scrollTop = 0;
-      document.scrollingElement.scrollTop = 0;
-      // refs.main.scrollTop = 0;  
-    }
-  })
+  //     // document.documentElement.scrollTop = 0;
+  //     // document.scrollingElement.scrollTop = 0;
+  //     // if (refs.main){
+  //     //   refs.main.scrollTop = 0;  
+  //     // }
+  //   }
+  // })
     return (
       <>
         <DemoNavbar />
-        <main ref={refs.main} type='main'>
+        <main ref={refs} type='main'>
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
