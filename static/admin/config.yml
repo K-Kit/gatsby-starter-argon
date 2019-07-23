@@ -33,6 +33,20 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
+          # icon title description, tags, linkto
+          - {label: DemoCards, name: intro, widget: object, fields: [
+            {label: Icon, name: icon, widget: image}, 
+            {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, 
+            {label: tags, name: tags, widget: string},
+            {label: linkUrl, name: link, widget: string},
+            }]
+            # icon. md, img
+          - {label: Feature Section, name: featureSection, widget: object, fields: [
+              {label: icon, name: icon, widget: string},
+              {label: description, name: description, widget: markdown},
+              {label: link, name: link, widget: string}
+          ] }
+          
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
