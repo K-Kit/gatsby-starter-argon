@@ -41,9 +41,11 @@ import {
 
 class DemoNavbar extends React.Component {
   componentDidMount() {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
-    // initialise
-    headroom.init();
+    if (typeof(document) !== 'undefined') {
+      let headroom = new Headroom(document.getElementById("navbar-main"));
+      // initialise
+      headroom.init();
+    }
   }
   render() {
     return (
