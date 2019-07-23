@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
@@ -43,18 +43,21 @@ import CardsFooter from "../../components/Footers/CardsFooter.jsx";
 // index page sections
 import Download from "../IndexSections/Download.jsx";
 
-class Landing extends React.Component {
-  state = {};
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
-  }
-  render() {
+const Landing = (props) => {
+  const [state, setState] = useState({})
+  const refs = useRef()
+  useEffect(() => {
+    if (document) {
+    
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+      // refs.main.scrollTop = 0;  
+    }
+  })
     return (
       <>
         <DemoNavbar />
-        <main ref="main">
+        <main ref={refs.main} type='main'>
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
@@ -791,7 +794,7 @@ class Landing extends React.Component {
                       </p>
                       <FormGroup
                         className={classnames("mt-5", {
-                          focused: this.state.nameFocused
+                          focused: state.nameFocused
                         })}
                       >
                         <InputGroup className="input-group-alternative">
@@ -803,14 +806,14 @@ class Landing extends React.Component {
                           <Input
                             placeholder="Your name"
                             type="text"
-                            onFocus={e => this.setState({ nameFocused: true })}
-                            onBlur={e => this.setState({ nameFocused: false })}
+                            onFocus={e => setState({ ...state, nameFocused: true })}
+                            onBlur={e => setState({ ...state, nameFocused: false })}
                           />
                         </InputGroup>
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused
+                          focused: state.emailFocused
                         })}
                       >
                         <InputGroup className="input-group-alternative">
@@ -822,8 +825,8 @@ class Landing extends React.Component {
                           <Input
                             placeholder="Email address"
                             type="email"
-                            onFocus={e => this.setState({ emailFocused: true })}
-                            onBlur={e => this.setState({ emailFocused: false })}
+                            onFocus={e => setState({ emailFocused: true })}
+                            onBlur={e => setState({ emailFocused: false })}
                           />
                         </InputGroup>
                       </FormGroup>
@@ -859,7 +862,7 @@ class Landing extends React.Component {
         <CardsFooter />
       </>
     );
-  }
+  
 }
 
 export default Landing;
