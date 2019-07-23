@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate
+      <Landing
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
