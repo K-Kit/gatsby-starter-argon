@@ -34,7 +34,7 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
           # icon title description, tags, linkto
-          - {label: DemoCards, name: intro, widget: object, fields: [
+          - {label: DemoCards, name: intro, widget: list, fields: [
             {label: Icon, name: icon, widget: image}, 
             {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, 
             {label: tags, name: tags, widget: string},
