@@ -44,6 +44,15 @@ import CardsFooter from "../../components/Footers/CardsFooter.jsx";
 import Download from "../IndexSections/Download.jsx";
 
 const Landing = (props) => {
+  const {
+    image,
+    title,
+    heading,
+    subheading,
+    mainpitch,
+    description,
+    intro,
+  } = props
   const [state, setState] = useState({})
   const refs = useRef()
   // useEffect(() => {
@@ -79,13 +88,10 @@ const Landing = (props) => {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">
-                        A beautiful Design System{" "}
-                        <span>completed with examples</span>
+                        {heading}
                       </h1>
                       <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
+                        {subheading}
                       </p>
                       <div className="btn-wrapper">
                         <Button
