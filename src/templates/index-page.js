@@ -11,40 +11,38 @@ export const IndexPageTemplate = ({
   title,
   heading,
   subheading,
-  mainpitch,
-  description,
-  intro,
+  demoCards,
+  featureSection
 }) => (
   <div>
     <Landing />
   </div>
 )
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-}
+// IndexPageTemplate.propTypes = {
+//   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+//   title: PropTypes.string,
+//   heading: PropTypes.string,
+//   subheading: PropTypes.string,
+//   mainpitch: PropTypes.object,
+//   description: PropTypes.string,
+//   intro: PropTypes.shape({
+//     blurbs: PropTypes.array,
+//   }),
+// }
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <IndexPageTemplate
+      <Landing
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        demoCards={frontmatter.demoCards}
+        featureSection={frontmatter.featureSection}
       />
     </Layout>
   )
@@ -61,39 +59,33 @@ IndexPage.propTypes = {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+query IndexPageTemplate {
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          fluid(maxWidth: 2048, quality: 100) {
+            src
           }
         }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
+      }
+      heading
+      subheading
+      demoCards {
         description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
+        heading
+        link
+        tags
+      }
+      featureSection {
+        description
+        image
+        imageSide
+        link
       }
     }
   }
+}
+
 `
