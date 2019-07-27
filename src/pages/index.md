@@ -25,7 +25,22 @@ demoCards:
     link: 'https://demos.creative-tim.com/argon-design-system-react/#pablo'
     tags: 'MARKETING, PRODUCT, LAUNCH'
 featureSection:
-  description: "# Awesome features\r\n\nThe kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.\r\n\n\r\n\n* Carefully crafted components\r\n* Amazing page examples\r\n* Super friendly support team"
+  description: >-
+    # Awesome features
+
+
+    The kit comes with three pre-built pages to help you get started faster. You
+    can change the text and images and you're good to go.
+  iconList:
+    - Text: Carefully crafted components
+      color: success
+      icon: ni-settings-gear-65
+    - Text: Amazing page examples
+      color: success
+      icon: ni-html5
+    - Text: Super friendly support team
+      color: success
+      icon: ni-satisfied
   image: /img/promo-1.75f7ab18.png
   imageSide: left
   link: 'https://demos.creative-tim.com/argon-design-system-react/#/landing-page'
