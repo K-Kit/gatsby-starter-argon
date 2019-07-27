@@ -38,13 +38,13 @@ featureSection:
     The kit comes with three pre-built pages to help you get started faster. You
     can change the text and images and you're good to go.
   iconList:
-    - Text: Carefully crafted components
+    - text: Carefully crafted components
       color: success
       icon: ni-settings-gear-65
-    - Text: Amazing page examples
+    - text: Amazing page examples
       color: success
       icon: ni-html5
-    - Text: Super friendly support team
+    - text: Super friendly support team
       color: success
       icon: ni-satisfied
   image: /img/promo-1.75f7ab18.png

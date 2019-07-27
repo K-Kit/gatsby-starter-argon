@@ -19,6 +19,7 @@
     "gatsby-remark-relative-images": "^0.2.1",
     "gatsby-source-filesystem": "^2.0.26",
     "gatsby-transformer-remark": "^2.6.7",
+    "gatsby-transformer-remark-frontmatter": "^0.1.0",
     "gatsby-transformer-sharp": "^2.1.9",
     "headroom.js": "^0.9.4",
     "lodash": "^4.17.15",
@@ -36,6 +37,8 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "reactstrap": "^8.0.1",
+    "remark": "^11.0.0",
+    "remark-html": "^10.0.0",
     "uuid": "^3.2.1"
   },
   "keywords": [

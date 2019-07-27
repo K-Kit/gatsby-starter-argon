@@ -58,9 +58,21 @@ module.exports = {
               destinationDir: 'static',
             },
           },
+
         ],
       },
     },
+
+    // {
+    //   resolve: 'gatsby-transformer-remark-frontmatter',
+    //   // default: { blacklist: [] }
+    //   options: {
+    //     // frontmatter fields to exclude, including all others
+    //     // blacklist: ['templateKey, tags'],
+    //     // frontmatter fields to include, excluding all others
+    //     whitelist: ['featureSection', 'demoCards', 'description', 'body']
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
@@ -74,6 +86,7 @@ module.exports = {
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
+
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
   // for avoiding CORS while developing Netlify Functions locally

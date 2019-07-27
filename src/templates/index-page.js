@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
@@ -15,7 +15,7 @@ export const IndexPageTemplate = ({
   featureSection
 }) => (
   <div>
-    <Landing />
+    {/*<Landing />*/}
   </div>
 )
 
@@ -31,8 +31,52 @@ export const IndexPageTemplate = ({
 //   }),
 // }
 
-const IndexPage = ({ data }) => {
+const IndexPage = (props) => {
+  const data = useStaticQuery(graphql`
+    {
+      markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+        frontmatter {
+          title
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          heading
+          subheading
+          demoCards {
+            description
+            heading
+            link
+            tags
+            color
+            icon
+          }
+          featureSection {
+            description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            imageSide
+            link
+            iconList {
+              text
+              color
+              icon
+            }
+          }
+        }
+      }
+    }
+  `)
   const { frontmatter } = data.markdownRemark
+  console.log(props)
 
   return (
     <Layout>
@@ -57,35 +101,40 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage
-
-export const pageQuery = graphql`
-query IndexPageTemplate {
-  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-    frontmatter {
-      title
-      image {
-        childImageSharp {
-          fluid(maxWidth: 2048, quality: 100) {
-            src
-          }
-        }
-      }
-      heading
-      subheading
-      demoCards {
-        description
-        heading
-        link
-        tags
-      }
-      featureSection {
-        description
-        image
-        imageSide
-        link
-      }
-    }
-  }
-}
-
-`
+//
+// export const pageQuery = graphql`
+// query IndexPageTemplate {
+//   markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+//     frontmatter {
+//       title
+//       image {
+//         childImageSharp {
+//           fluid(maxWidth: 2048, quality: 100) {
+//             ...gatsbyImageSharpFluid
+//           }
+//         }
+//       }
+//       heading
+//       subheading
+//       demoCards {
+//         description
+//         heading
+//         link
+//         tags
+//       }
+//       featureSection {
+//         description
+//         image {
+//           childImageSharp {
+//             fluid(maxWidth: 2048, quality: 100) {
+//               ...gatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         imageSide
+//         link
+//       }
+//     }
+//   }
+// }
+// `

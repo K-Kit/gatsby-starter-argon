@@ -2,6 +2,8 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const remark = require('remark');
+const remarkHTML = require('remark-html');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -16,7 +18,6 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
@@ -72,11 +73,26 @@ exports.createPages = ({ actions, graphql }) => {
   })
 }
 
+const whitelist = []
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
+
   fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
+    if (node.frontmatter) {
+      Object.keys(node.frontmatter).forEach(key => {
+        if (node.frontmatter[key].description){
+          const markdown = node.frontmatter[key].description;
+          node.frontmatter[key].description= remark()
+              .use(remarkHTML)
+              .processSync(markdown)
+              .toString();
+        }
+
+      })
+    }
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,

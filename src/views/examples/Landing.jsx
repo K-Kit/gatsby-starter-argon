@@ -42,6 +42,7 @@ import CardsFooter from "../../components/Footers/CardsFooter.jsx";
 
 // index page sections
 import Download from "../IndexSections/Download.jsx";
+import Content, {HTMLContent} from "../../components/Content";
 
 const Landing = (props) => {
   const {
@@ -150,22 +151,22 @@ const Landing = (props) => {
                           <Col lg="4">
                             <Card className="card-lift--hover shadow border-0">
                               <CardBody className="py-5">
-                                <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                                  <i className="ni ni-check-bold" />
+                                <div className={`icon icon-shape icon-shape-${card.color} rounded-circle mb-4`}>
+                                  <i className={`ni ${card.icon}`} />
                                 </div>
-                                <h6 className="text-primary text-uppercase">
+                                <h6 className={`text-${card.color} text-uppercase`}>
                                   {card.heading}
                                 </h6>
                                 <p className="description mt-3">
                                   {card.description}
                                 </p>
                                 <div>
-                                  {tags.map(tag => <Badge color="primary" pill className="mr-1">{tag}</Badge>)}
+                                  {tags.map(tag => <Badge color={card.color} pill className="mr-1">{tag}</Badge>)}
                                   
                                 </div>
                                 <Button
                                   className="mt-4"
-                                  color="primary"
+                                  color={card.color}
                                   href="#pablo"
                                   onClick={e => e.preventDefault()}
                                 >
@@ -199,16 +200,34 @@ const Landing = (props) => {
                       <i className="ni ni-settings-gear-65" />
                     </div>
                     <h3>{featureSection.heading}</h3>
-                    <p>
-                      {featureSection.description}
-                    </p>
+                    <HTMLContent content={featureSection.description} />
                     <ul className="list-unstyled mt-5">
+                      {featureSection.iconList &&
+                      featureSection.iconList.map(item =>
+                          <li className="py-2">
+                            <div className="d-flex align-items-center">
+                              <div>
+                                <Badge
+                                    className="badge-circle mr-3"
+                                    color={item.color}
+                                >
+                                  <i className={`ni ${item.icon}`} />
+                                </Badge>
+                              </div>
+                              <div>
+                                <h6 className="mb-0">
+                                  {item.text}
+                                </h6>
+                              </div>
+                            </div>
+                          </li>
+                      )}
                       <li className="py-2">
                         <div className="d-flex align-items-center">
                           <div>
                             <Badge
-                              className="badge-circle mr-3"
-                              color="success"
+                                className="badge-circle mr-3"
+                                color="success"
                             >
                               <i className="ni ni-settings-gear-65" />
                             </Badge>

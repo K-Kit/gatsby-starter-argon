@@ -9,6 +9,8 @@ const Content = ({ content, className }) => (
   <div className={className}>{content}</div>
 )
 
+// export const MarkdownContent =
+
 Content.propTypes = {
   content: PropTypes.node,
   className: PropTypes.string,
