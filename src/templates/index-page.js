@@ -63,13 +63,24 @@ const IndexPage = (props) => {
                 }
               }
             }
-            imageSide
             link
             iconList {
               text
               color
               icon
             }
+          }
+          customerSection {
+            description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            cardTitle
+            cardText
           }
         }
       }
@@ -81,12 +92,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Landing
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        demoCards={frontmatter.demoCards}
-        featureSection={frontmatter.featureSection}
+        {...frontmatter}
       />
     </Layout>
   )

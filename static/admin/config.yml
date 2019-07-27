@@ -34,7 +34,6 @@ collections:
           - {label: Subheading, name: subheading, widget: string}
           # icon title description, tags, linkto
           - {label: DemoCards, name: demoCards, widget: list, fields: [
-
           {label: Icon, name: icon, widget: string},
           {label: Color, name: color, widget: string},
           {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},
@@ -44,7 +43,6 @@ collections:
           # icon. md, img
           - {label: Feature Section, name: featureSection, widget: object, fields: [
           {label: image, name: image, widget: image},
-          {label: imageSide, name: imageSide, widget: string},
           {label: description, name: description, widget: markdown},
           {label: IconList, name: iconList, widget: list , fields: [
               {label: Icon, name: icon, widget: string},
@@ -53,3 +51,29 @@ collections:
           ] },
           {label: link, name: link, widget: string},
           ] }
+          - {label:  About our customers, name: customerSection, widget: object, fields: [
+          {label: cardImage, name: cardImage, widget: image},
+          {label: description, name: description, widget: markdown},
+          {label: link, name: link, widget: string},
+          {label: cardTitle, name: cardTitle, widget: string},
+          {label: cardText, name: cardText, widget: string},
+
+          ] }
+          - {label: section3, name: section3, widget: list, fields: [
+          {label: Icon, name: icon, widget: string},
+          {label: Color, name: color, widget: string},
+          {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: markdown},
+          {label: tags, name: tags, widget: string},
+          {label: linkUrl, name: link, widget: string}
+          ]}
+          - {label: teamHeader, name: teamHeader, widget: object, fields: [
+          {label: Heading, name: heading, widget: string}, {label: subheading, name: subheading, widget: text},
+          ]}
+          - {label: team, name: team, widget: list, fields: [
+          {label: image, name: image, widget: image},
+          {label: Color, name: color, widget: string},
+          {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},
+          {label: tags, name: tags, widget: string},
+          {label: socials, name: socials, widget: list, field: text}
+          ]}
+

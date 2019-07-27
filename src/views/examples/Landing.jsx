@@ -43,6 +43,7 @@ import CardsFooter from "../../components/Footers/CardsFooter.jsx";
 // index page sections
 import Download from "../IndexSections/Download.jsx";
 import Content, {HTMLContent} from "../../components/Content";
+import Img from 'gatsby-image'
 
 const Landing = (props) => {
   const {
@@ -51,7 +52,8 @@ const Landing = (props) => {
     heading,
     subheading,
     demoCards,
-    featureSection
+    featureSection,
+      customerSection
   } = props
   const [state, setState] = useState({})
   const refs = useRef()
@@ -188,11 +190,9 @@ const Landing = (props) => {
             <Container>
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={require("../../../static/img/theme/promo-1.png")}
-                  />
+
+                  <Img fluid={featureSection.image.childImageSharp.fluid}
+                       className="img-fluid floating" />
                 </Col>
                 <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
@@ -222,55 +222,6 @@ const Landing = (props) => {
                             </div>
                           </li>
                       )}
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                                className="badge-circle mr-3"
-                                color="success"
-                            >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Carefully crafted components
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-html5" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Super friendly support team
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
                     </ul>
                   </div>
                 </Col>
@@ -282,6 +233,7 @@ const Landing = (props) => {
               <Row className="row-grid align-items-center">
                 <Col md="6">
                   <Card className="bg-default shadow border-0">
+                    {/*todo replace with gatsby-image*/}
                     <CardImg
                       alt="..."
                       src={require("../../../static/img/theme/img-1-1200x1000.jpg")}
@@ -305,12 +257,10 @@ const Landing = (props) => {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                        Design System
+                        {customerSection.cardTitle}
                       </h4>
                       <p className="lead text-italic text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
+                        {customerSection.cardText}
                       </p>
                     </blockquote>
                   </Card>
@@ -320,29 +270,7 @@ const Landing = (props) => {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Our customers</h3>
-                    <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <a
-                      className="font-weight-bold text-warning mt-5"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      A beautiful UI Kit for impactful websites
-                    </a>
+                    <HTMLContent content={customerSection.description} />
                   </div>
                 </Col>
               </Row>
