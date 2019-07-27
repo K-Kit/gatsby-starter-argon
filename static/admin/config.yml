@@ -67,13 +67,12 @@ collections:
           {label: linkUrl, name: link, widget: string}
           ]}
           - {label: teamHeader, name: teamHeader, widget: object, fields: [
-          {label: Heading, name: heading, widget: string}, {label: subheading, name: subheading, widget: text},
+          {label: Heading, name: heading, widget: string}, {label: subHeading, name: subHeading, widget: text},
           ]}
           - {label: team, name: team, widget: list, fields: [
           {label: image, name: image, widget: image},
           {label: Color, name: color, widget: string},
-          {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},
-          {label: tags, name: tags, widget: string},
-          {label: socials, name: socials, widget: list, field: text}
+          {label: Heading, name: heading, widget: string}, {label: subHeading, name: subHeading, widget: text},
+          {label: socials, name: socials, widget: list, optional: true,  fields: [{name: platform, widget: string, label: platform},{name: uri, widget: string, label: uri} ]}
           ]}
 
