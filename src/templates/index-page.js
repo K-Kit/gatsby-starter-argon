@@ -72,7 +72,7 @@ const IndexPage = (props) => {
           }
           customerSection {
             description
-            image {
+            cardImage {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid

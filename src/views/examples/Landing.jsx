@@ -43,7 +43,10 @@ import CardsFooter from "../../components/Footers/CardsFooter.jsx";
 // index page sections
 import Download from "../IndexSections/Download.jsx";
 import Content, {HTMLContent} from "../../components/Content";
-import Img from 'gatsby-image'
+import Img from '../../components/PreviewCompatibleImage'
+
+
+// TODO replace all <img> and bgimage with gatsby image
 
 const Landing = (props) => {
   const {
@@ -57,19 +60,19 @@ const Landing = (props) => {
   } = props
   const [state, setState] = useState({})
   const refs = useRef()
-  // useEffect(() => {
-  //   if (document) {
-    
-  //     // document.documentElement.scrollTop = 0;
-  //     // document.scrollingElement.scrollTop = 0;
-  //     // if (refs.main){
-  //     //   refs.main.scrollTop = 0;  
-  //     // }
-  //   }
-  // })
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+      if (refs.main){
+        refs.main.scrollTop = 0;
+      }
+    }
+  })
     return (
       <>
-        <DemoNavbar />
+        {/*<DemoNavbar />*/}
         <main ref={refs} type='main'>
           <div className="position-relative">
             {/* shape Hero */}
@@ -163,8 +166,8 @@ const Landing = (props) => {
                                   {card.description}
                                 </p>
                                 <div>
-                                  {tags.map(tag => <Badge color={card.color} pill className="mr-1">{tag}</Badge>)}
-                                  
+                                  {tags && tags.map(tag => <Badge color={card.color} pill className="mr-1">{tag}</Badge>)}
+
                                 </div>
                                 <Button
                                   className="mt-4"
@@ -179,8 +182,8 @@ const Landing = (props) => {
                           </Col>
                         )
                       })}
-                      
-                   
+
+
                   </Row>
                 </Col>
               </Row>
@@ -191,7 +194,7 @@ const Landing = (props) => {
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
 
-                  <Img fluid={featureSection.image.childImageSharp.fluid}
+                  <Img imageInfo={featureSection.image}
                        className="img-fluid floating" />
                 </Col>
                 <Col className="order-md-1" md="6">
@@ -202,26 +205,26 @@ const Landing = (props) => {
                     <h3>{featureSection.heading}</h3>
                     <HTMLContent content={featureSection.description} />
                     <ul className="list-unstyled mt-5">
-                      {featureSection.iconList &&
-                      featureSection.iconList.map(item =>
-                          <li className="py-2">
-                            <div className="d-flex align-items-center">
-                              <div>
-                                <Badge
-                                    className="badge-circle mr-3"
-                                    color={item.color}
-                                >
-                                  <i className={`ni ${item.icon}`} />
-                                </Badge>
-                              </div>
-                              <div>
-                                <h6 className="mb-0">
-                                  {item.text}
-                                </h6>
-                              </div>
-                            </div>
-                          </li>
-                      )}
+                      {/*{featureSection.iconList &&*/}
+                      {/*featureSection.iconList.map(item =>*/}
+                      {/*    <li className="py-2">*/}
+                      {/*      <div className="d-flex align-items-center">*/}
+                      {/*        <div>*/}
+                      {/*          <Badge*/}
+                      {/*              className="badge-circle mr-3"*/}
+                      {/*              color={item.color}*/}
+                      {/*          >*/}
+                      {/*            <i className={`ni ${item.icon}`} />*/}
+                      {/*          </Badge>*/}
+                      {/*        </div>*/}
+                      {/*        <div>*/}
+                      {/*          <h6 className="mb-0">*/}
+                      {/*            {item.text}*/}
+                      {/*          </h6>*/}
+                      {/*        </div>*/}
+                      {/*      </div>*/}
+                      {/*    </li>*/}
+                      {/*)}*/}
                     </ul>
                   </div>
                 </Col>
@@ -735,9 +738,9 @@ const Landing = (props) => {
               </Row>
             </Container>
           </section>
-          <Download />
+          {/*<Download />*/}
         </main>
-        <CardsFooter />
+        {/*<CardsFooter />*/}
       </>
     );
   
