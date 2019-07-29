@@ -2,4 +2,4 @@
 
 gatsby-starter-argon.netlify.com
 
-![gif]("example.gif")
+![gif]("./example.gif")
