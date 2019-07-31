@@ -59,21 +59,21 @@ const Landing = (props) => {
       customerSection
   } = props
   const [state, setState] = useState({})
-  const refs = useRef()
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-
-      document.documentElement.scrollTop = 0;
-      document.scrollingElement.scrollTop = 0;
-      if (refs.main){
-        refs.main.scrollTop = 0;
-      }
-    }
-  })
+  // const refs = useRef()
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //
+  //     document.documentElement.scrollTop = 0;
+  //     document.scrollingElement.scrollTop = 0;
+  //     if (refs.main){
+  //       refs.main.scrollTop = 0;
+  //     }
+  //   }
+  // })
     return (
       <>
         {/*<DemoNavbar />*/}
-        <main ref={refs} type='main'>
+        <main type='main'>
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
@@ -696,6 +696,7 @@ const Landing = (props) => {
                         className={classnames({
                           focused: state.emailFocused
                         })}
+                        netlify
                       >
                         <InputGroup className="input-group-alternative">
                           <InputGroupAddon addonType="prepend">

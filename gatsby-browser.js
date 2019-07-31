@@ -15,8 +15,14 @@
 // export const wrapRootElement = ({children}) => <div theme={theme}>
 //   {children}
 // </div>
-
+import React from 'react'
 import "./static/vendor/nucleo/css/nucleo.css";
 import "./static/vendor/font-awesome/css/font-awesome.min.css";
 import "./static/scss/argon-design-system-react.scss";
 import './static/css/argon-design-system-react.css'
+import Navbar from "./src/components/Navbars/DemoNavbar"
+
+export const wrapRootElement = ({element}) => <>
+    <Navbar />
+    {element}
+</>;
