@@ -56,7 +56,8 @@ const Landing = (props) => {
     subheading,
     demoCards,
     featureSection,
-      customerSection
+      customerSection,
+      section3
   } = props
   const [state, setState] = useState({})
   // const refs = useRef()
@@ -299,42 +300,44 @@ const Landing = (props) => {
                       </div>
                     </div>
                     <div className="pl-4">
-                      <h4 className="display-3 text-white">Modern Interface</h4>
+                      <h4 className="display-3 text-white">{section3[0].heading}</h4>
                       <p className="text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
+                        {section3[0].description}
                       </p>
                     </div>
                   </div>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-satisfied" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          <h5 className="title text-success">
-                            Awesome Support
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className="text-success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
+                  {
+                    section3.slice(1,-1).map(item => {
+                      return(
+                          <Card className="shadow shadow-lg--hover mt-5">
+                            <CardBody>
+                              <div className="d-flex px-3">
+                                <div>
+                                  <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                    <i className={`ni ${item.icon}`} />
+                                  </div>
+                                </div>
+                                <div className="pl-4">
+                                  <h5 className={`title text-${item.color}`}>
+                                    {item.heading}
+                                  </h5>
+                                  <p>
+                                    {item.description}
+                                  </p>
+                                  <a
+                                      className={`text-${item.color}`}
+                                      href={item.link}
+                                      onClick={e => e.preventDefault()}
+                                  >
+                                    Learn more
+                                  </a>
+                                </div>
+                              </div>
+                            </CardBody>
+                          </Card>
+                      )
+                    })
+                  }
                   <Card className="shadow shadow-lg--hover mt-5">
                     <CardBody>
                       <div className="d-flex px-3">
@@ -345,7 +348,7 @@ const Landing = (props) => {
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-warning">
-                            Modular Components
+                            Modular Compents
                           </h5>
                           <p>
                             The Arctic Ocean freezes every winter and much of

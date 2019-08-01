@@ -70,6 +70,14 @@ const IndexPage = (props) => {
               icon
             }
           }
+          section3 {
+            color
+            description
+            icon
+            link
+            tags
+            heading
+          }
           customerSection {
             description
             cardImage {
