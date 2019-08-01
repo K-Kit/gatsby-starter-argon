@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="253e49d5-9b72-475a-9880-7d40ca7526b7" name="Default Changelist" comment="updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/index-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/examples/Landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Landing.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/examples/Landing.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="538" column="44" lean-forward="true" selection-start-line="538" selection-start-column="44" selection-end-line="538" selection-end-column="44" />
+            <state relative-caret-position="72">
+              <caret line="315" column="91" selection-start-line="315" selection-start-column="91" selection-end-line="315" selection-end-column="91" />
               <folding>
                 <element signature="e#795#973#0" expanded="true" />
                 <element signature="e#994#1059#0" expanded="true" />
@@ -145,11 +144,11 @@
       <find>length</find>
       <find>ref</find>
       <find>customersection</find>
-      <find>ref</find>
       <find>Input</find>
       <find>text</find>
       <find>state</find>
       <find>image</find>
+      <find>item</find>
     </findStrings>
     <replaceStrings>
       <replace>text</replace>
@@ -351,7 +350,7 @@
       <workItem from="1564436057971" duration="5618000" />
       <workItem from="1564528695902" duration="1672000" />
       <workItem from="1564695290032" duration="244000" />
-      <workItem from="1564695826448" duration="494000" />
+      <workItem from="1564695826448" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="3 sections left">
       <created>1564258263130</created>
@@ -392,7 +391,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21254000" />
+    <option name="totallyTimeSpent" value="21422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -663,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/examples/Landing.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="538" column="44" lean-forward="true" selection-start-line="538" selection-start-column="44" selection-end-line="538" selection-end-column="44" />
+        <state relative-caret-position="72">
+          <caret line="315" column="91" selection-start-line="315" selection-start-column="91" selection-end-line="315" selection-end-column="91" />
           <folding>
             <element signature="e#795#973#0" expanded="true" />
             <element signature="e#994#1059#0" expanded="true" />

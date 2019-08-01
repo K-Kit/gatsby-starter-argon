@@ -307,13 +307,13 @@ const Landing = (props) => {
                     </div>
                   </div>
                   {
-                    section3.slice(1,-1).map(item => {
+                    section3.slice(1).map(item => {
                       return(
                           <Card className="shadow shadow-lg--hover mt-5">
                             <CardBody>
                               <div className="d-flex px-3">
                                 <div>
-                                  <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                  <div className={`icon icon-shape bg-gradient-${item.color} rounded-circle text-white`}>
                                     <i className={`ni ${item.icon}`} />
                                   </div>
                                 </div>
@@ -338,34 +338,7 @@ const Landing = (props) => {
                       )
                     })
                   }
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                            <i className="ni ni-active-40" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          <h5 className="title text-warning">
-                            Modular Compents
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className="text-warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
+
                 </Col>
               </Row>
             </Container>
