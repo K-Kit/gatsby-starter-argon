@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 import Landing from '../views/examples/Landing'
+
+// TODO content component to make markdown preview compatible
 export const IndexPageTemplate = ({
   image,
   title,
@@ -115,40 +117,3 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage
-//
-// export const pageQuery = graphql`
-// query IndexPageTemplate {
-//   markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-//     frontmatter {
-//       title
-//       image {
-//         childImageSharp {
-//           fluid(maxWidth: 2048, quality: 100) {
-//             ...gatsbyImageSharpFluid
-//           }
-//         }
-//       }
-//       heading
-//       subheading
-//       demoCards {
-//         description
-//         heading
-//         link
-//         tags
-//       }
-//       featureSection {
-//         description
-//         image {
-//           childImageSharp {
-//             fluid(maxWidth: 2048, quality: 100) {
-//               ...gatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//         imageSide
-//         link
-//       }
-//     }
-//   }
-// }
-// `
