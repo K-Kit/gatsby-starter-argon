@@ -41,10 +41,10 @@ import {
 
 class DemoNavbar extends React.Component {
   componentDidMount() {
-    if (typeof(document) !== 'undefined') {
-      // let headroom = new Headroom(document.getElementById("navbar-main"));
-      // initialise
-      // headroom.init();
+    if (typeof window !== 'undefined') {
+      const Headroom = require('headroom.js');
+      let headroom = new Headroom(document.getElementById("navbar-main"));
+      headroom.init();
     }
   }
   render() {
@@ -184,9 +184,9 @@ class DemoNavbar extends React.Component {
                         Facebook
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip333589074">
+                    {/* <UncontrolledTooltip delay={0} target="tooltip333589074">
                       Like us on Facebook
-                    </UncontrolledTooltip>
+                    </UncontrolledTooltip> */}
                   </NavItem>
                   <NavItem>
                     <NavLink
@@ -200,9 +200,9 @@ class DemoNavbar extends React.Component {
                         Instagram
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
+                    {/* <UncontrolledTooltip delay={0} target="tooltip356693867">
                       Follow us on Instagram
-                    </UncontrolledTooltip>
+                    </UncontrolledTooltip> */}
                   </NavItem>
                   <NavItem>
                     <NavLink
