@@ -705,7 +705,7 @@ const Landing = (props) => {
                               className="btn-round"
                               color="default"
                               size="lg"
-                              type="button"
+                              type="submit"
                           >
                             Send Message
                           </Button>
