@@ -37,17 +37,12 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "../../components/Navbars/DemoNavbar.jsx";
-import CardsFooter from "../../components/Footers/CardsFooter.jsx";
-
-// index page sections
-import Download from "../IndexSections/Download.jsx";
 import Content, {HTMLContent} from "../../components/Content";
 import Img from '../../components/PreviewCompatibleImage'
 
 
 // TODO replace all <img> and bgimage with gatsby image
-
+// todo add buttons to schema, refactor some of the schema into cleaner, clearer, more dynamic objects
 const Landing = (props) => {
   const {
     image,
@@ -57,20 +52,11 @@ const Landing = (props) => {
     demoCards,
     featureSection,
       customerSection,
-      section3
+      section3,
+      formSection,
+      
   } = props
   const [state, setState] = useState({})
-  // const refs = useRef()
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //
-  //     document.documentElement.scrollTop = 0;
-  //     document.scrollingElement.scrollTop = 0;
-  //     if (refs.main){
-  //       refs.main.scrollTop = 0;
-  //     }
-  //   }
-  // })
     return (
       <>
         {/*<DemoNavbar />*/}
