@@ -579,6 +579,7 @@ const Landing = (props) => {
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
+                {/*wrote schema for this section will map later*/}
                 <Col lg="10">
                   <h2 className="display-3 text-white">Build something</h2>
                   <p className="lead text-white">
