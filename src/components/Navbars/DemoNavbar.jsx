@@ -18,7 +18,6 @@
 import React from "react";
 import { Link } from "gatsby";
 // JavaScript plugin that hides or shows a component based on your scroll
-// import Headroom from "headroom.js";
 // reactstrap components
 import {
   Button,
@@ -40,13 +39,13 @@ import {
 } from "reactstrap";
 
 class DemoNavbar extends React.Component {
-  componentDidMount() {
-    if (typeof window !== 'undefined') {
-      const Headroom = require('headroom.js');
-      let headroom = new Headroom(document.getElementById("navbar-main"));
-      headroom.init();
-    }
-  }
+      componentDidMount() {
+        if (typeof window !== 'undefined') {
+          const Headroom = require('headroom.js');
+          let headroom = new Headroom(document.getElementById("navbar-main"));
+          headroom.init();
+        }
+      }
   render() {
     return (
       <>
