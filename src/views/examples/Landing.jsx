@@ -649,7 +649,7 @@ const Landing = (props) => {
                       <p className="mt-0">
                         Your project is very important to us.
                       </p>
-                      <form netlify>
+                      <form  name="contact-landing" method="POST" data-netlify="true">
                         <FormGroup
                             className={classnames("mt-5", {
                               focused: state.nameFocused
