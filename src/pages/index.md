@@ -5,6 +5,12 @@ heading: A beautiful Design System completed with examples
 subheading: >-
   The design system comes with four pre-built pages to help you get started
   faster. You can change the text and images and you're good to go.
+menuButtons:
+  - color: info
+    icon: nan
+    link: >-
+      https://app.netlify.com/start/deploy?repository=https://github.com/K-Kit/gatsby-starter-argon&amp;stack=cms
+    text: Deploy to Netlify
 demoCards:
   - color: primary
     description: >-
@@ -87,6 +93,13 @@ teamHeader:
   subHeading: >-
     According to the National Oceanic and Atmospheric Administration, Ted,
     Scambos, NSIDClead scentist, puts the potentially record maximum.
+preForm:
+  heading: Build something
+  points: []
+  subHeading: >-
+    According to the National Oceanic and Atmospheric Administration, Ted,
+    Scambos, NSIDClead scentist, puts the potentially record low maximum sea ice
+    extent tihs year down to low ice.
 team:
   - color: warning
     heading: Ryan Tompson
