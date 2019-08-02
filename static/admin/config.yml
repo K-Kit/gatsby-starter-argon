@@ -69,6 +69,17 @@ collections:
           - {label: teamHeader, name: teamHeader, widget: object, fields: [
           {label: Heading, name: heading, widget: string}, {label: subHeading, name: subHeading, widget: text},
           ]}
+          - {label: preForm, name: preForm, widget: object, fields: [
+              {label: heading, name: heading, widget: text},
+              {label: subHeading, name: subHeading, widget: text},
+              {label: points, name: points, widget: list, fields: [
+                  {label: Icon, name: icon, widget: string},
+                  {label: Color, name: color, widget: string},
+                  {label: heading, name: heading, widget: text},
+                  {label: subHeading, name: subHeading, widget: text},
+              ]},
+
+          ]}
           - {label: team, name: team, widget: list, fields: [
           {label: image, name: image, widget: image},
           {label: Color, name: color, widget: string},
