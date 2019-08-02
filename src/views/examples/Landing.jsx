@@ -721,9 +721,7 @@ const Landing = (props) => {
               </Row>
             </Container>
           </section>
-          {/*<Download />*/}
         </main>
-        <CardsFooter />
       </>
     );
   
