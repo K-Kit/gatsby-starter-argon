@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="253e49d5-9b72-475a-9880-7d40ca7526b7" name="Default Changelist" comment="updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/examples/Landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Landing.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,12 +21,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/examples/Landing.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="315" column="91" selection-start-line="315" selection-start-column="91" selection-end-line="315" selection-end-column="91" />
+            <state relative-caret-position="757">
+              <caret line="711" column="30" selection-start-line="711" selection-start-column="30" selection-end-line="711" selection-end-column="30" />
               <folding>
                 <element signature="e#795#973#0" expanded="true" />
                 <element signature="e#994#1059#0" expanded="true" />
                 <element signature="e#1152#1205#0" expanded="true" />
+                <element signature="e#28287#29203#0" />
+                <element signature="e#29226#29619#0" />
+                <element signature="e#29642#30005#0" />
               </folding>
             </state>
           </provider>
@@ -191,10 +193,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1238" />
-    <option name="height" value="665" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="990" />
+    <option name="height" value="532" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -350,7 +352,7 @@
       <workItem from="1564436057971" duration="5618000" />
       <workItem from="1564528695902" duration="1672000" />
       <workItem from="1564695290032" duration="244000" />
-      <workItem from="1564695826448" duration="662000" />
+      <workItem from="1564695826448" duration="1202000" />
     </task>
     <task id="LOCAL-00001" summary="3 sections left">
       <created>1564258263130</created>
@@ -391,13 +393,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21422000" />
+    <option name="totallyTimeSpent" value="21962000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49312377" visible="true" weight="0.20026438" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49312377" visible="true" weight="0.15964173" />
       <window_info id="Structure" order="1" sideWeight="0.50687623" side_tool="true" weight="0.20026438" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5016779" side_tool="true" weight="0.24973656" />
@@ -662,12 +664,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/examples/Landing.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="315" column="91" selection-start-line="315" selection-start-column="91" selection-end-line="315" selection-end-column="91" />
+        <state relative-caret-position="757">
+          <caret line="711" column="30" selection-start-line="711" selection-start-column="30" selection-end-line="711" selection-end-column="30" />
           <folding>
             <element signature="e#795#973#0" expanded="true" />
             <element signature="e#994#1059#0" expanded="true" />
             <element signature="e#1152#1205#0" expanded="true" />
+            <element signature="e#28287#29203#0" />
+            <element signature="e#29226#29619#0" />
+            <element signature="e#29642#30005#0" />
           </folding>
         </state>
       </provider>

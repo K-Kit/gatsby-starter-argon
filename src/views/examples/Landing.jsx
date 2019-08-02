@@ -649,66 +649,68 @@ const Landing = (props) => {
                       <p className="mt-0">
                         Your project is very important to us.
                       </p>
-                      <FormGroup
-                        className={classnames("mt-5", {
-                          focused: state.nameFocused
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-user-run" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Your name"
-                            type="text"
-                            onFocus={e => setState({ ...state, nameFocused: true })}
-                            onBlur={e => setState({ ...state, nameFocused: false })}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup
-                        className={classnames({
-                          focused: state.emailFocused
-                        })}
-                        netlify
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Email address"
-                            type="email"
-                            onFocus={e => setState({ emailFocused: true })}
-                            onBlur={e => setState({ emailFocused: false })}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup className="mb-4">
-                        <Input
-                          className="form-control-alternative"
-                          cols="80"
-                          name="name"
-                          placeholder="Type a message..."
-                          rows="4"
-                          type="textarea"
-                        />
-                      </FormGroup>
-                      <div>
-                        <Button
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
+                      <form netlify>
+                        <FormGroup
+                            className={classnames("mt-5", {
+                              focused: state.nameFocused
+                            })}
                         >
-                          Send Message
-                        </Button>
-                      </div>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-user-run" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                                placeholder="Your name"
+                                type="text"
+                                onFocus={e => setState({ ...state, nameFocused: true })}
+                                onBlur={e => setState({ ...state, nameFocused: false })}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup
+                            className={classnames({
+                              focused: state.emailFocused
+                            })}
+                            netlify
+                        >
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-email-83" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                                placeholder="Email address"
+                                type="email"
+                                onFocus={e => setState({ emailFocused: true })}
+                                onBlur={e => setState({ emailFocused: false })}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup className="mb-4">
+                          <Input
+                              className="form-control-alternative"
+                              cols="80"
+                              name="name"
+                              placeholder="Type a message..."
+                              rows="4"
+                              type="textarea"
+                          />
+                        </FormGroup>
+                        <div>
+                          <Button
+                              block
+                              className="btn-round"
+                              color="default"
+                              size="lg"
+                              type="button"
+                          >
+                            Send Message
+                          </Button>
+                        </div>
+                      </form>
                     </CardBody>
                   </Card>
                 </Col>
