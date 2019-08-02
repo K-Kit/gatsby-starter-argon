@@ -664,6 +664,7 @@ const Landing = (props) => {
                             <Input
                                 placeholder="Your name"
                                 type="text"
+                                name="name"
                                 onFocus={e => setState({ ...state, nameFocused: true })}
                                 onBlur={e => setState({ ...state, nameFocused: false })}
                             />
@@ -673,7 +674,7 @@ const Landing = (props) => {
                             className={classnames({
                               focused: state.emailFocused
                             })}
-                            netlify
+
                         >
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
@@ -682,8 +683,9 @@ const Landing = (props) => {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                                placeholder="Email address"
                                 type="email"
+                                name="email"
+                                placeholder="Email address"
                                 onFocus={e => setState({ emailFocused: true })}
                                 onBlur={e => setState({ emailFocused: false })}
                             />
@@ -693,7 +695,7 @@ const Landing = (props) => {
                           <Input
                               className="form-control-alternative"
                               cols="80"
-                              name="name"
+                              name="text"
                               placeholder="Type a message..."
                               rows="4"
                               type="textarea"
