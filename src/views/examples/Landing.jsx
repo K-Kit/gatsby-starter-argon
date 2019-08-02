@@ -722,7 +722,7 @@ const Landing = (props) => {
           </section>
           {/*<Download />*/}
         </main>
-        {/*<CardsFooter />*/}
+        <CardsFooter />
       </>
     );
   
