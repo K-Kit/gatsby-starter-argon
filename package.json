@@ -48,6 +48,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "forestry:preview": "gatsby develop -H 0.0.0.0 -p 8080",
     "clean": "gatsby clean",
     "start:app": "npm run develop",
     "start:lambda": "netlify-lambda serve src/lambda",
