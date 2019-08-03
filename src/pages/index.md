@@ -104,6 +104,13 @@ team:
   - color: warning
     heading: Ryan Tompson
     image: /img/team-1-800x800-53033970a416368da35794389680266f.jpg
+    socials:
+      - platform: facebook
+        uri: '#'
+      - platform: twitter
+        uri: '#'
+      - platform: dribble
+        uri: '#'
     subHeading: Web Developer
   - color: primary
     heading: 'Romina Hadid '
