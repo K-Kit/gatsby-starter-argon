@@ -137,7 +137,7 @@ const Landing = (props) => {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                      {demoCards.map(card => {
+                      {demoCards && demoCards.map(card => {
                         const tags = card.tags.split(', ')
                         return (
                           <Col lg="4">
@@ -356,7 +356,7 @@ const Landing = (props) => {
                 </Col>
               </Row>
               <Row>
-                {team.map(item => {
+                {team && team.map(item => {
                   return (
                       <Col className="mb-5 mb-lg-0" lg="3" md="6">
                         <div className="px-4">
@@ -453,7 +453,7 @@ const Landing = (props) => {
                 </Col>
               </Row>
               <Row className="row-grid mt-5">
-                {points.map(item => {
+                {preForm.points && preForm.points.map(item => {
                   return (
                       <Col lg="4">
                         <div className={`icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary`}>
@@ -466,7 +466,7 @@ const Landing = (props) => {
                       </Col>
                   )
                 })}
-                
+
               </Row>
             </Container>
             {/* SVG separator */}

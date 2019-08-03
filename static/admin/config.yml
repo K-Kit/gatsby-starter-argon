@@ -99,7 +99,7 @@ collections:
             widget: object
             fields:
               - name: subHeading
-                widget: field
+                widget: string
               - name: heading
                 widget: string
 

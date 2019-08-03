@@ -55,17 +55,18 @@ const IndexPage = (props) => {
           preForm {
             subHeading
             heading
+            points {
+              icon
+              color
+              heading
+              subHeading
+            }
           }
           teamHeader {
             heading
             subHeading
           }
-          points {
-            icon
-            color
-            heading
-            subHeading
-          }
+          
           team {
             color
             heading

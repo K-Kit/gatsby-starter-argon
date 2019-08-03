@@ -96,12 +96,7 @@ teamHeader:
     Scambos, NSIDClead scentist, puts the potentially record maximum.
 preForm:
   heading: Build something
-  subHeading: >-
-    According to the National Oceanic and Atmospheric Administration, Ted,
-    Scambos, NSIDClead scentist, puts the potentially record low maximum sea ice
-    extent tihs year down to low ice.
-    
-points:
+  points:
     - color: primary
       heading: Building tools
       icon: ni-settings
@@ -121,6 +116,14 @@ points:
       subHeading: >-
         Some quick example text to build on the card title and make up the bulk
         of the card's content.
+  subHeading: >-
+    According to the National Oceanic and Atmospheric Administration, Ted,
+    Scambos, NSIDClead scentist, puts the potentially record low maximum sea ice
+    extent tihs year down to low ice.
+form:
+  heading: Want to work with us?
+  subHeading: Your project is very important to us.
+  
 team:
   - color: warning
     heading: Ryan Tompson
@@ -145,5 +148,6 @@ team:
     heading: John Doe
     image: /img/team-4-800x800-230071328b705f8686cabd26a85ed6a5.jpg
     subHeading: Founder and CEO
+    
 ---
 
