@@ -8,7 +8,7 @@ sections:
   path: src/pages
   label: pages
   create: all
-  match: "***"
+  match: "**/*"
 upload_dir: static/img
 public_path: "/static/img"
 front_matter_path: ''
