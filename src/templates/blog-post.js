@@ -4,8 +4,10 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
 import BlogPostTemplate from '../views/BlogPost'
+
+import { PreviewCompatibleContent} from "../components/Content";
+import Navbar from "../components/Navbars/DemoNavbar";
 // export const BlogPostTemplate = ({
 //   content,
 //   contentComponent,
@@ -46,20 +48,22 @@ import BlogPostTemplate from '../views/BlogPost'
 //   )
 // }
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
-}
+// BlogPostTemplate.propTypes = {
+//   content: PropTypes.node.isRequired,
+//   contentComponent: PropTypes.func,
+//   description: PropTypes.string,
+//   title: PropTypes.string,
+//   helmet: PropTypes.object,
+// }
 
 const BlogPost = ({ data }) => {
-  // const { markdownRemark: post } = data
+  const { markdownRemark } = data
+  // console.log(data)
   //
   return (
     <Layout>
-      <BlogPostTemplate />
+      <Navbar color={'primary'} />
+      <BlogPostTemplate {...markdownRemark.frontmatter} content={markdownRemark.html} />
     </Layout>
   )
 }
@@ -80,7 +84,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-#        description
+        description
         tags
       }
     }

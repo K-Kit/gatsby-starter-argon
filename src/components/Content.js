@@ -6,9 +6,9 @@ import ReactMarkdown from "react-markdown";
 export const PreviewCompatibleContent = ({ content, ...props}) => {
   return (
       <>
-        {isEditor ?
+        {isEditor() ?
             <ReactMarkdown source={content} {...props}  />:
-            <HTMLContent {...props} />
+            <HTMLContent className={props.className} content={content} />
         }
       </>
   )

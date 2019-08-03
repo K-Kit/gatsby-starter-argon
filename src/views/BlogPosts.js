@@ -12,20 +12,20 @@ import {
   Col
 } from "reactstrap";
 
-import {isBrowser} from "../utils";
+import {isEditor} from "../utils";
 
 function BlogPosts() {
-  isBrowser() && document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    if (isBrowser()) {
-      document.body.classList.add("blog-posts");
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      return function cleanup() {
-        document.body.classList.remove("blog-posts");
-      };
-    }
-  });
+  // isBrowser() && document.documentElement.classList.remove("nav-open");
+  // React.useEffect(() => {
+  //   if (isBrowser()) {
+  //     document.body.classList.add("blog-posts");
+  //     window.scrollTo(0, 0);
+  //     document.body.scrollTop = 0;
+  //     return function cleanup() {
+  //       document.body.classList.remove("blog-posts");
+  //     };
+  //   }
+  // });
   return (
     <>
       <div className="wrapper">
