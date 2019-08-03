@@ -168,3 +168,11 @@ fields:
   - type: text
     name: subHeading
     label: subHeading
+- name: color
+  type: color
+  label: color
+  config:
+    required: false
+    color_format: Hex
+  description: color
+  default: "#736464"
