@@ -10,17 +10,17 @@ import { Badge, Button, Card, Media, Container, Row, Col } from "reactstrap";
 import {isBrowser} from "../utils";
 
 function BlogPost() {
-  isBrowser() && document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    if (isBrowser()) {
-      document.body.classList.add("blog-post");
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      return function cleanup() {
-        document.body.classList.remove("blog-post");
-      };
-    }
-  });
+  // isBrowser() && document.documentElement.classList.remove("nav-open");
+  // React.useEffect(() => {
+  //   if (isBrowser()) {
+  //     document.body.classList.add("blog-post");
+  //     window.scrollTo(0, 0);
+  //     document.body.scrollTop = 0;
+  //     return function cleanup() {
+  //       document.body.classList.remove("blog-post");
+  //     };
+  //   }
+  // });
   return (
     <>
       <div className="wrapper">
@@ -54,10 +54,10 @@ function BlogPost() {
                     <Card
                       data-radius="none"
                       style={{
-                        backgroundImage:
-                          "url(" +
-                          require("assets/img/sections/daniel-olahs.jpg") +
-                          ")"
+                        // backgroundImage:
+                        //   "url(" +
+                        //   require("") +
+                        //   ")"
                       }}
                     />
                     <p className="image-thumb text-center">
@@ -102,10 +102,10 @@ function BlogPost() {
                           <Card
                             data-radius="none"
                             style={{
-                              backgroundImage:
-                                "url(" +
-                                require("assets/img/sections/sebastien-gabrieles.jpg") +
-                                ")"
+                              // backgroundImage:
+                              //   "url(" +
+                              //   require("assets/img/sections/sebastien-gabrieles.jpg") +
+                              //   ")"
                             }}
                           />
                           {/* end card */}
@@ -116,10 +116,10 @@ function BlogPost() {
                           <Card
                             data-radius="none"
                             style={{
-                              backgroundImage:
-                                "url(" +
-                                require("assets/img/sections/john-towner.jpg") +
-                                ")"
+                              // backgroundImage:
+                              //   "url(" +
+                              //   require("assets/img/sections/john-towner.jpg") +
+                              //   ")"
                             }}
                           />
                         </a>
@@ -212,216 +212,47 @@ function BlogPost() {
                       </Row>
                     </Container>
                   </div>
-                  <hr />
-                  <Container>
-                    <Row>
-                      <Media>
-                        <a
-                          className="pull-left"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <div className="avatar big-avatar">
-                            <Media
-                              alt="..."
-                              object
-                              src={require("assets/img/faces/kaci-baum-2.jpg")}
-                            />
-                          </div>
-                        </a>
-                        <Media body>
-                          <Media heading>Sophie Banks</Media>
-                          <div className="pull-right">
-                            <Button
-                              className="btn-round"
-                              color="default"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-reply mr-1" />
-                              Follow
-                            </Button>
-                          </div>
-                          <p>
-                            Hello guys, nice to have you on the platform! There
-                            will be a lot of great stuff coming soon. We will
-                            keep you posted for the latest news.
-                          </p>
-                          <p>Don't forget, You're Awesome!</p>
-                        </Media>
-                      </Media>
-                    </Row>
-                    <Row>
-                      <div className="comments media-area">
-                        <h3 className="text-center">Comments</h3>
-                        <Media>
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/faces/clem-onojeghuo-3.jpg")}
-                              />
-                            </div>
-                          </a>
-                          <Media body>
-                            <Media heading tag="h5">
-                              John Lincoln
-                            </Media>
-                            <div className="pull-right">
-                              <h6 className="text-muted">Sep 11, 11:54 AM</h6>
-                              <Button
-                                className="btn-link pull-right"
-                                color="info"
-                                href="#pablo"
-                                onClick={e => e.preventDefault()}
-                              >
-                                <i className="fa fa-reply mr-1" />
-                                Reply
-                              </Button>
-                            </div>
-                            <p>
-                              Hello guys, nice to have you on the platform!
-                              There will be a lot of great stuff coming soon. We
-                              will keep you posted for the latest news.
-                            </p>
-                            <Media>
-                              <a
-                                className="pull-left"
-                                href="#pablo"
-                                onClick={e => e.preventDefault()}
-                              >
-                                <div className="avatar">
-                                  <Media
-                                    alt="..."
-                                    object
-                                    src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
-                                  />
-                                </div>
-                              </a>
-                              <Media body>
-                                <Media heading tag="h5">
-                                  Erik P.
-                                </Media>
-                                <div className="pull-right">
-                                  <h6 className="text-muted">
-                                    Sep 11, 11:56 AM
-                                  </h6>
-                                  <Button
-                                    className="btn-link pull-right"
-                                    color="info"
-                                    href="#pablo"
-                                    onClick={e => e.preventDefault()}
-                                  >
-                                    <i className="fa fa-reply mr-1" />
-                                    Reply
-                                  </Button>
-                                </div>
-                                <p>
-                                  Hello guys, nice to have you on the platform!
-                                  There will be a lot of great stuff coming
-                                  soon. We will keep you posted for the latest
-                                  news.
-                                </p>
-                                <p>Don't forget, You're Awesome!</p>
-                              </Media>
-                            </Media>
-                            {/* end media */}
-                          </Media>
-                        </Media>
-                        {/* end media */}
-                        <Media>
-                          <a
-                            className="pull-left"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            <div className="avatar">
-                              <Media
-                                alt="..."
-                                object
-                                src={require("assets/img/faces/joe-gardner-2.jpg")}
-                              />
-                            </div>
-                          </a>
-                          <Media body>
-                            <Media heading tag="h5">
-                              Joe
-                            </Media>
-                            <div className="pull-right">
-                              <h6 className="text-muted">Sep 11, 11:57 AM</h6>
-                              <Button
-                                className="btn-link pull-right"
-                                color="info"
-                                href="#pablo"
-                                onClick={e => e.preventDefault()}
-                              >
-                                <i className="fa fa-reply mr-1" />
-                                Reply
-                              </Button>
-                            </div>
-                            <p>
-                              Hello guys, nice to have you on the platform!
-                              There will be a lot of great stuff coming soon. We
-                              will keep you posted for the latest news.
-                            </p>
-                            <p>Don't forget, You're Awesome!</p>
-                          </Media>
-                        </Media>
-                        {/* end media */}
-                      </div>
-                    </Row>
-                  </Container>
+                  {/*<hr />*/}
+                  {/*<Container>*/}
+                  {/*  <Row>*/}
+                  {/*    <Media>*/}
+                  {/*      <a*/}
+                  {/*        className="pull-left"*/}
+                  {/*        href="#pablo"*/}
+                  {/*        onClick={e => e.preventDefault()}*/}
+                  {/*      >*/}
+                  {/*        <div className="avatar big-avatar">*/}
+                  {/*          <Media*/}
+                  {/*            alt="..."*/}
+                  {/*            object*/}
+                  {/*            // src={require("assets/img/faces/kaci-baum-2.jpg")}*/}
+                  {/*          />*/}
+                  {/*        </div>*/}
+                  {/*      </a>*/}
+                  {/*      <Media body>*/}
+                  {/*        <Media heading>Sophie Banks</Media>*/}
+                  {/*        <div className="pull-right">*/}
+                  {/*          <Button*/}
+                  {/*            className="btn-round"*/}
+                  {/*            color="default"*/}
+                  {/*            href="#pablo"*/}
+                  {/*            onClick={e => e.preventDefault()}*/}
+                  {/*          >*/}
+                  {/*            <i className="fa fa-reply mr-1" />*/}
+                  {/*            Follow*/}
+                  {/*          </Button>*/}
+                  {/*        </div>*/}
+                  {/*        <p>*/}
+                  {/*          Hello guys, nice to have you on the platform! There*/}
+                  {/*          will be a lot of great stuff coming soon. We will*/}
+                  {/*          keep you posted for the latest news.*/}
+                  {/*        </p>*/}
+                  {/*        <p>Don't forget, You're Awesome!</p>*/}
+                  {/*      </Media>*/}
+                  {/*    </Media>*/}
+                  {/*  </Row>*/}
+                  {/*</Container>*/}
                 </Col>
-              </Row>
-              <Row>
-                <div className="related-articles">
-                  <h3 className="title">Related articles</h3>
-                  <legend />
-                  <Container>
-                    <Row>
-                      <Col md="4">
-                        <a href="pkp">
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={require("assets/img/sections/damir-bosnjak.jpg")}
-                          />
-                        </a>
-                        <p className="blog-title">
-                          My Review of Pitchfork’s ‘Indie 500’ Album Review
-                        </p>
-                      </Col>
-                      <Col md="4">
-                        <a href="pkp">
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={require("assets/img/sections/por7o.jpg")}
-                          />
-                        </a>
-                        <p className="blog-title">Top Events This Month</p>
-                      </Col>
-                      <Col md="4">
-                        <a href="pkp">
-                          <img
-                            alt="..."
-                            className="img-rounded img-responsive"
-                            src={require("assets/img/sections/jeff-sheldon.jpg")}
-                          />
-                        </a>
-                        <p className="blog-title">
-                          You Should Get Excited About Virtual Reality. Here’s
-                          Why.
-                        </p>
-                      </Col>
-                    </Row>
-                  </Container>
-                </div>
               </Row>
             </Container>
           </div>
