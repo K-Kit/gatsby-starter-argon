@@ -9,10 +9,10 @@ sections:
   label: pages
   create: all
   match: "***"
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: static/img
+public_path: "/static/img"
 front_matter_path: ''
-use_front_matter_path: false
+use_front_matter_path: 
 file_template: ":filename:"
 instant_preview: true
 build:
