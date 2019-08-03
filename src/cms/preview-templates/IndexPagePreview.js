@@ -8,6 +8,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
+
+          isEditor={true}
           {...data}
       />
     )

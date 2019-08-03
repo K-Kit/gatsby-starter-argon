@@ -38,7 +38,7 @@ import {
 } from "reactstrap";
 
 // core components
-import Content, {HTMLContent} from "../../components/Content";
+import { PreviewCompatibleContent} from "../../components/Content";
 import Img from '../../components/PreviewCompatibleImage'
 
 
@@ -58,7 +58,9 @@ const Landing = (props) => {
       menuButtons,
       team,
       teamHeader,
+      preForm,
       isEditor=false,
+      points,
 
       
   } = props
@@ -188,10 +190,7 @@ const Landing = (props) => {
                       <i className="ni ni-settings-gear-65" />
                     </div>
                     <h3>{featureSection.heading}</h3>
-                    {isEditor ?
-                        <ReactMarkdown source={featureSection.description}  />:
-                        <HTMLContent content={featureSection.description} />
-                    }
+                    <PreviewCompatibleContent content={featureSection.description} isEditor={isEditor} />
                     <ul className="list-unstyled mt-5">
                       {featureSection.iconList &&
                       featureSection.iconList.map(item =>
@@ -225,11 +224,11 @@ const Landing = (props) => {
                 <Col md="6">
                   <Card className="bg-default shadow border-0">
                     {/*todo replace with gatsby-image*/}
-                    <CardImg
-                      alt="..."
-                      src={require("../../../static/img/theme/img-1-1200x1000.jpg")}
-                      top
-                    />
+                    <Img imageInfo={{
+                      image: customerSection.cardImage,
+                      childImageSharp: customerSection.cardImage.childImageSharp,
+                      className: 'card-img-top'
+                    }} />
                     <blockquote className="card-blockquote">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -261,7 +260,7 @@ const Landing = (props) => {
                     <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <HTMLContent content={customerSection.description} />
+                    <PreviewCompatibleContent content={customerSection.description} />
                   </div>
                 </Col>
               </Row>
@@ -376,6 +375,7 @@ const Landing = (props) => {
                               <small className="h6 text-muted">{item.subHeading}</small>
                             </h5>
                             <div className="mt-3">
+
                               <Button
                                   className="btn-icon-only rounded-circle"
                                   color={item.color}
@@ -410,82 +410,63 @@ const Landing = (props) => {
               </Row>
             </Container>
           </section>
-          <section className="section section-lg pt-0">
-            <Container>
-              <Card className="bg-gradient-warning shadow-lg border-0">
-                <div className="p-5">
-                  <Row className="align-items-center">
-                    <Col lg="8">
-                      <h3 className="text-white">
-                        We made website building easier for you.
-                      </h3>
-                      <p className="lead text-white mt-3">
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
-                      </p>
-                    </Col>
-                    <Col className="ml-lg-auto" lg="3">
-                      <Button
-                        block
-                        className="btn-white"
-                        color="default"
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        size="lg"
-                      >
-                        Download React
-                      </Button>
-                    </Col>
-                  </Row>
-                </div>
-              </Card>
-            </Container>
-          </section>
+          {/*<section className="section section-lg pt-0">*/}
+          {/*  <Container>*/}
+          {/*    <Card className="bg-gradient-warning shadow-lg border-0">*/}
+          {/*      <div className="p-5">*/}
+          {/*        <Row className="align-items-center">*/}
+          {/*          <Col lg="8">*/}
+          {/*            <h3 className="text-white">*/}
+          {/*              We made website building easier for you.*/}
+          {/*            </h3>*/}
+          {/*            <p className="lead text-white mt-3">*/}
+          {/*              I will be the leader of a company that ends up being*/}
+          {/*              worth billions of dollars, because I got the answers. I*/}
+          {/*              understand culture.*/}
+          {/*            </p>*/}
+          {/*          </Col>*/}
+          {/*          <Col className="ml-lg-auto" lg="3">*/}
+          {/*            <Button*/}
+          {/*              block*/}
+          {/*              className="btn-white"*/}
+          {/*              color="default"*/}
+          {/*              href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"*/}
+          {/*              size="lg"*/}
+          {/*            >*/}
+          {/*              Download React*/}
+          {/*            </Button>*/}
+          {/*          </Col>*/}
+          {/*        </Row>*/}
+          {/*      </div>*/}
+          {/*    </Card>*/}
+          {/*  </Container>*/}
+          {/*</section>*/}
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 {/*wrote schema for this section will map later*/}
                 <Col lg="10">
-                  <h2 className="display-3 text-white">Build something</h2>
+                  <h2 className="display-3 text-white">{preForm.heading}</h2>
                   <p className="lead text-white">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
+                    {preForm.subHeading}
                   </p>
                 </Col>
               </Row>
               <Row className="row-grid mt-5">
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-settings text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Building tools</h5>
-                  <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-ruler-pencil text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Grow your market</h5>
-                  <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-atom text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Launch time</h5>
-                  <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
+                {points.map(item => {
+                  return (
+                      <Col lg="4">
+                        <div className={`icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary`}>
+                          <i className={`ni ${item.icon} text-${item.color}`} />
+                        </div>
+                        <h5 className="text-white mt-3">{item.heading}</h5>
+                        <p className="text-white mt-3">
+                          {item.description}
+                        </p>
+                      </Col>
+                  )
+                })}
+                
               </Row>
             </Container>
             {/* SVG separator */}

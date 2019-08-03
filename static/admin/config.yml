@@ -95,4 +95,11 @@ collections:
           {label: Heading, name: heading, widget: string}, {label: subHeading, name: subHeading, widget: text},
           {label: socials, name: socials, widget: list, optional: true,  fields: [{name: platform, widget: string, label: platform},{name: uri, widget: string, label: uri} ]}
           ]}
+          - name: form
+            widget: object
+            fields:
+              - name: subHeading
+                widget: field
+              - name: heading
+                widget: string
 
