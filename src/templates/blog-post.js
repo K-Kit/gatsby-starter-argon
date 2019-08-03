@@ -62,8 +62,8 @@ const BlogPost = ({ data }) => {
   //
   return (
     <Layout>
-      <Navbar color={'primary'} />
-      <BlogPostTemplate {...markdownRemark.frontmatter} content={markdownRemark.html} />
+      <Navbar />
+      <BlogPostTemplate {...markdownRemark.frontmatter} content={markdownRemark.html}  />
     </Layout>
   )
 }

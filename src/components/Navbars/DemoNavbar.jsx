@@ -51,9 +51,14 @@ class DemoNavbar extends React.Component {
       <>
         <header className="header-global">
           <Navbar
-            className="navbar-main navbar-transparent navbar-light headroom"
-            expand="lg"
-            id="navbar-main"
+              className="navbar-main navbar-transparent navbar-light headroom"
+              expand="lg"
+              id="navbar-main"
+              style={!this.props.transparent && {
+                background: "#172b4d"
+              }
+              || {}
+              }
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>

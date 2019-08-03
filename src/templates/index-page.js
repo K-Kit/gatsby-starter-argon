@@ -139,7 +139,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <Navbar />
+      <Navbar transparent />
       <Landing
         {...frontmatter}
       />

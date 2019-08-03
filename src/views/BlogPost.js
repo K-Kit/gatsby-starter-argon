@@ -9,7 +9,11 @@ import { PreviewCompatibleContent} from "../components/Content";
 // import BlogPostHeader from "components/Headers/BlogPostHeader.js";
 // import FooterGray from "components/Footers/FooterGray.js";
 import {isBrowser, isEditor} from "../utils";
-
+// https://www.facebook.com/sharer/sharer.php?u=${social.url}
+// https://twitter.com/home?status=${social.url}
+// https://pinterest.com/pin/create/button/?url=${social.url}&media=&description=
+// https://www.linkedin.com/shareArticle?mini=true&url=${social.url}&title=&summary=&source=
+// mailto:info@example.com?&subject=&body=${social.url}
 const BlogPost = ({
                     content,
                     contentComponent,
@@ -49,7 +53,7 @@ const BlogPost = ({
               {/*</Row>*/}
               <Row>
                 <Col className="ml-auto mr-auto mt-2" md="10">
-                  <div className="text-center">
+                  <div className="text-center mt-5">
                     {/*<Badge className="main-tag" color="warning">*/}
                     {/*  Trending*/}
                     {/*</Badge>*/}
@@ -77,7 +81,7 @@ const BlogPost = ({
                   {/*  /!*</p>*!/*/}
                   {/*</a>*/}
 
-                  <div className="article-content">
+                  <div className="article-content" >
                     <PreviewCompatibleContent content={content} isEditor={isEditor()} />
                   </div>
                   <br />
