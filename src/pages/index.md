@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Gatsby Starter Argon
+title: "/"
 heading: A beautiful Design System completed with examples and 1-click deploy!
 subheading: The design system comes with four pre-built pages to help you get started
   faster. You can change the text and images using a static CMS and you're good to
