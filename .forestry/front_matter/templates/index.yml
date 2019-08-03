@@ -1,0 +1,170 @@
+---
+label: index
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: text
+  name: title
+  label: title
+- type: text
+  name: heading
+  label: heading
+- type: textarea
+  name: subheading
+  label: subheading
+- type: field_group_list
+  name: menuButtons
+  label: menuButtons
+  fields:
+  - type: text
+    name: color
+    label: color
+  - type: text
+    name: icon
+    label: icon
+  - type: textarea
+    name: link
+    label: link
+  - type: text
+    name: text
+    label: text
+- type: field_group_list
+  name: demoCards
+  label: demoCards
+  fields:
+  - type: text
+    name: color
+    label: color
+  - type: textarea
+    name: description
+    label: description
+  - type: text
+    name: heading
+    label: heading
+  - type: text
+    name: icon
+    label: icon
+  - type: text
+    name: link
+    label: link
+  - type: text
+    name: tags
+    label: tags
+- type: field_group
+  name: featureSection
+  label: featureSection
+  fields:
+  - type: textarea
+    name: description
+    label: description
+  - type: field_group_list
+    name: iconList
+    label: iconList
+    fields:
+    - type: text
+      name: color
+      label: color
+    - type: text
+      name: icon
+      label: icon
+    - type: text
+      name: text
+      label: text
+  - type: file
+    name: image
+    label: image
+  - type: text
+    name: link
+    label: link
+- type: field_group
+  name: customerSection
+  label: customerSection
+  fields:
+  - type: file
+    name: cardImage
+    label: cardImage
+  - type: textarea
+    name: cardText
+    label: cardText
+  - type: text
+    name: cardTitle
+    label: cardTitle
+  - type: textarea
+    name: description
+    label: description
+  - type: text
+    name: link
+    label: link
+- type: field_group_list
+  name: section3
+  label: section3
+  fields:
+  - type: text
+    name: color
+    label: color
+  - type: textarea
+    name: description
+    label: description
+  - type: text
+    name: heading
+    label: heading
+  - type: text
+    name: icon
+    label: icon
+  - type: text
+    name: link
+    label: link
+  - type: text
+    name: tags
+    label: tags
+- type: field_group
+  name: teamHeader
+  label: teamHeader
+  fields:
+  - type: text
+    name: heading
+    label: heading
+  - type: textarea
+    name: subHeading
+    label: subHeading
+- type: field_group
+  name: preForm
+  label: preForm
+  fields:
+  - type: text
+    name: heading
+    label: heading
+  - type: list
+    name: points
+    label: points
+  - type: textarea
+    name: subHeading
+    label: subHeading
+- type: field_group_list
+  name: team
+  label: team
+  fields:
+  - type: text
+    name: color
+    label: color
+  - type: text
+    name: heading
+    label: heading
+  - type: file
+    name: image
+    label: image
+  - type: field_group_list
+    name: socials
+    label: socials
+    fields:
+    - type: text
+      name: platform
+      label: platform
+    - type: text
+      name: uri
+      label: uri
+  - type: text
+    name: subHeading
+    label: subHeading
