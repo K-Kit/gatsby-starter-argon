@@ -7,7 +7,7 @@ subheading: >-
   faster. You can change the text and images and you're good to go.
 menuButtons:
   - color: info
-    icon: nan
+    icon: fa-rocket
     link: >-
       https://app.netlify.com/start/deploy?repository=https://github.com/K-Kit/gatsby-starter-argon&amp;stack=cms
     text: Deploy to Netlify

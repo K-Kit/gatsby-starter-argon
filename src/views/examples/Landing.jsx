@@ -19,6 +19,7 @@ import React, { useRef, useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
+import ReactMarkdown from "react-markdown";
 // reactstrap components
 import {
   Badge,
@@ -54,6 +55,11 @@ const Landing = (props) => {
       customerSection,
       section3,
       formSection,
+      menuButtons,
+      team,
+      teamHeader,
+      isEditor=false,
+
       
   } = props
   const [state, setState] = useState({})
@@ -86,28 +92,20 @@ const Landing = (props) => {
                         {subheading}
                       </p>
                       <div className="btn-wrapper">
-                        <Button
-                          className="btn-icon mb-3 mb-sm-0"
-                          color="info"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
-                          </span>
-                          <span className="btn-inner--text">Components</span>
-                        </Button>
-                        <Button
-                          className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                          color="default"
-                          href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
-                          </span>
-                          <span className="btn-inner--text">
-                            Download React
-                          </span>
-                        </Button>
+                        {menuButtons && menuButtons.map(item => {
+                          return (
+                              <Button
+                                  className="btn-icon mb-3 mb-sm-0"
+                                  color={item.color}
+                                  href={item.link}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <i className={`fa ${item.icon}`} />
+                                </span>
+                                <span className="btn-inner--text">{item.text}</span>
+                              </Button>
+                          )
+                        })}
                       </div>
                     </Col>
                   </Row>
@@ -190,28 +188,31 @@ const Landing = (props) => {
                       <i className="ni ni-settings-gear-65" />
                     </div>
                     <h3>{featureSection.heading}</h3>
-                    <HTMLContent content={featureSection.description} />
+                    {isEditor ?
+                        <ReactMarkdown source={featureSection.description}  />:
+                        <HTMLContent content={featureSection.description} />
+                    }
                     <ul className="list-unstyled mt-5">
-                      {/*{featureSection.iconList &&*/}
-                      {/*featureSection.iconList.map(item =>*/}
-                      {/*    <li className="py-2">*/}
-                      {/*      <div className="d-flex align-items-center">*/}
-                      {/*        <div>*/}
-                      {/*          <Badge*/}
-                      {/*              className="badge-circle mr-3"*/}
-                      {/*              color={item.color}*/}
-                      {/*          >*/}
-                      {/*            <i className={`ni ${item.icon}`} />*/}
-                      {/*          </Badge>*/}
-                      {/*        </div>*/}
-                      {/*        <div>*/}
-                      {/*          <h6 className="mb-0">*/}
-                      {/*            {item.text}*/}
-                      {/*          </h6>*/}
-                      {/*        </div>*/}
-                      {/*      </div>*/}
-                      {/*    </li>*/}
-                      {/*)}*/}
+                      {featureSection.iconList &&
+                      featureSection.iconList.map(item =>
+                          <li className="py-2">
+                            <div className="d-flex align-items-center">
+                              <div>
+                                <Badge
+                                    className="badge-circle mr-3"
+                                    color={item.color}
+                                >
+                                  <i className={`ni ${item.icon}`} />
+                                </Badge>
+                              </div>
+                              <div>
+                                <h6 className="mb-0">
+                                  {item.text}
+                                </h6>
+                              </div>
+                            </div>
+                          </li>
+                      )}
                     </ul>
                   </div>
                 </Col>
@@ -349,185 +350,63 @@ const Landing = (props) => {
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="8">
-                  <h2 className="display-3">The amazing Team</h2>
+                  <h2 className="display-3">{teamHeader.heading}</h2>
                   <p className="lead text-muted">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
+                    {teamHeader.subHeading}
                   </p>
                 </Col>
               </Row>
               <Row>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("../../../static/img/theme/team-1-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="warning"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("../../../static/img/theme/team-2-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Romina Hadid</span>
-                        <small className="h6 text-muted">
-                          Marketing Strategist
-                        </small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("../../../static/img/theme/team-3-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("../../../static/img/theme/team-4-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">John Doe</span>
-                        <small className="h6 text-muted">Founder and CEO</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="success"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
+                {team.map(item => {
+                  return (
+                      <Col className="mb-5 mb-lg-0" lg="3" md="6">
+                        <div className="px-4">
+                          <Img
+                              alt="..."
+                              imageInfo={{
+                                childImageSharp: item.image.childImageSharp,
+                                image: item.image,
+                                style: { width: "200px" },
+                                className: `rounded-circle img-center img-fluid shadow shadow-lg--hover`
+                              }}
+                          />
+                          <div className="pt-4 text-center">
+                            <h5 className="title">
+                              <span className="d-block mb-1">{item.heading}</span>
+                              <small className="h6 text-muted">{item.subHeading}</small>
+                            </h5>
+                            <div className="mt-3">
+                              <Button
+                                  className="btn-icon-only rounded-circle"
+                                  color={item.color}
+                                  href="#pablo"
+                                  onClick={e => e.preventDefault()}
+                              >
+                                <i className="fa fa-twitter" />
+                              </Button>
+                              <Button
+                                  className="btn-icon-only rounded-circle ml-1"
+                                  color={item.color}
+                                  href="#pablo"
+                                  onClick={e => e.preventDefault()}
+                              >
+                                <i className="fa fa-facebook" />
+                              </Button>
+                              <Button
+                                  className="btn-icon-only rounded-circle ml-1"
+                                  color={item.color}
+                                  href="#pablo"
+                                  onClick={e => e.preventDefault()}
+                              >
+                                <i className="fa fa-dribbble" />
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                  )
+                })}
+
               </Row>
             </Container>
           </section>

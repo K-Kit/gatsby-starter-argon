@@ -46,6 +46,32 @@ const IndexPage = (props) => {
               }
             }
           }
+          menuButtons {
+            color
+            icon
+            link
+            text
+          }
+          preForm {
+            subHeading
+            heading
+          }
+          teamHeader {
+            heading
+            subHeading
+          }
+          team {
+            color
+            heading
+            subHeading
+            image {
+              childImageSharp {
+                fluid(maxWidth: 180) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
           heading
           subheading
           demoCards {
