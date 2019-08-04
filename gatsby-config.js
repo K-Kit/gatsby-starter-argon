@@ -3,6 +3,7 @@ var proxy = require('http-proxy-middleware')
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Argon Design System',
+    siteUrl: `https://gatsby-starter-argon.netlify.com`,
     description:
       'This is a gatsby-starter with creative-tim\'s Argon Design System.  1-click deploy to netlify inside!',
   },

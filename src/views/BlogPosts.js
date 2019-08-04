@@ -12,7 +12,7 @@ import {
   Col
 } from "reactstrap";
 
-import {isEditor} from "../utils";
+import {isEditor, isBrowser} from "../utils";
 
 function BlogPosts() {
   // isBrowser() && document.documentElement.classList.remove("nav-open");

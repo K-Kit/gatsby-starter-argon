@@ -9,11 +9,8 @@ import { PreviewCompatibleContent} from "../components/Content";
 // import BlogPostHeader from "components/Headers/BlogPostHeader.js";
 // import FooterGray from "components/Footers/FooterGray.js";
 import {isBrowser, isEditor} from "../utils";
-// https://www.facebook.com/sharer/sharer.php?u=${social.url}
-// https://twitter.com/home?status=${social.url}
-// https://pinterest.com/pin/create/button/?url=${social.url}&media=&description=
-// https://www.linkedin.com/shareArticle?mini=true&url=${social.url}&title=&summary=&source=
-// mailto:info@example.com?&subject=&body=${social.url}
+import {graphql, useStaticQuery} from "gatsby";
+
 const BlogPost = ({
                     content,
                     contentComponent,
@@ -24,6 +21,18 @@ const BlogPost = ({
                     date = 'August 3, 2019',
     ...props
                   }) => {
+  const data = useStaticQuery(graphql`
+    query SiteUrlQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+        }
+      }
+    }
+
+  `)
   return (
       <div className="wrapper">
         {helmet || ''}
@@ -88,21 +97,27 @@ const BlogPost = ({
                         <Col className="ml-auto" md="4">
                           <div className="sharing">
                             <h5>Spread the word</h5>
-                            <Button
-                              className="btn-just-icon mr-1"
-                              color="twitter"
-                            >
-                              <i className="fa fa-twitter" />
-                            </Button>
-                            <Button
-                              className="btn-just-icon mr-1"
-                              color="facebook"
-                            >
-                              <i className="fa fa-facebook" />
-                            </Button>
-                            <Button className="btn-just-icon" color="google">
-                              <i className="fa fa-google" />
-                            </Button>
+                            <a href={`https://twitter.com/home?status=${data.site.siteMetadata.siteUrl}`}>
+                              <Button
+                                  className="btn-just-icon mr-1"
+                                  color="twitter"
+                              >
+                                <i className="fa fa-twitter" />
+                              </Button>
+                            </a>
+                            <a href={`https://www.facebook.com/sharer/sharer.php?u=${data.site.siteMetadata.siteUrl}`}>
+                              <Button
+                                className="btn-just-icon mr-1"
+                                color="facebook"
+                              >
+                                <i className="fa fa-facebook" />
+                              </Button>
+                            </a>
+                            <a href={`https://pinterest.com/pin/create/button/?url=${data.site.siteMetadata.siteUrl}&media=&description=`}>
+                              <Button className="btn-just-icon" color="pinterest">
+                                <i className="fa fa-pinterest" />
+                              </Button>
+                            </a>
                           </div>
                         </Col>
                       </Row>
