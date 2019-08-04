@@ -24,20 +24,7 @@ const BlogPost = ({
                     date = 'August 3, 2019',
     ...props
                   }) => {
-  console.log(content)
-  // isBrowser() && document.documentElement.classList.remove("nav-open");
-  // React.useEffect(() => {
-  //   if (isBrowser()) {
-  //     document.body.classList.add("blog-post");
-  //     window.scrollTo(0, 0);
-  //     document.body.scrollTop = 0;
-  //     return function cleanup() {
-  //       document.body.classList.remove("blog-post");
-  //     };
-  //   }
-  // });
   return (
-    <>
       <div className="wrapper">
         {helmet || ''}
         <div className="main">
@@ -62,7 +49,7 @@ const BlogPost = ({
                         {title}
                       </h3>
                     </a>
-                    <h6 className="title-uppercase">{date}</h6>
+                    <h6 className="title-uppercase">{typeof date === 'object' ? date.toLocaleString():date}</h6>
                   </div>
                 </Col>
                 <Col className="ml-auto mr-auto" md="8">
@@ -81,8 +68,8 @@ const BlogPost = ({
                   {/*  /!*</p>*!/*/}
                   {/*</a>*/}
 
-                  <div className="article-content" >
-                    <PreviewCompatibleContent content={content} isEditor={false} />
+                  <div className="article-content " >
+                    <PreviewCompatibleContent content={content} isEditor={true}  />
                   </div>
                   <br />
                   <div className="article-footer">
@@ -167,7 +154,6 @@ const BlogPost = ({
           </div>
         </div>
       </div>
-    </>
   );
 }
 

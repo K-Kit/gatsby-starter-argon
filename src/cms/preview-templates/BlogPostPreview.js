@@ -9,7 +9,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
   return (
   <BlogPostTemplate
       {...data}
-      content={widgetFor('body')}
+      content={data.body}
   />
 )}
 

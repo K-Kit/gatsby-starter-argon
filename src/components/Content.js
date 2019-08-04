@@ -8,7 +8,7 @@ export const PreviewCompatibleContent = ({ content, ...props}) => {
   return (
       <>
         { editor ?
-            <ReactMarkdown source={content} {...props}  />:
+            <ReactMarkdown source={content} {...props} style={{"&p &img": {width: "100% !important"}}}  />:
             <HTMLContent className={props.className} content={content} />
         }
       </>
