@@ -21,7 +21,7 @@ const BlogPost = ({
                     date = 'August 3, 2019',
     ...props
                   }) => {
-  const data = useStaticQuery(graphql`
+  const data = !isEditor() && useStaticQuery(graphql`
     query SiteUrlQuery {
       site {
         siteMetadata {
