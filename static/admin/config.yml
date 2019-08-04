@@ -46,6 +46,7 @@ collections:
           }
 
 
+
   - name: "pages"
     label: "Pages"
     files:
@@ -65,6 +66,7 @@ collections:
             ]
           }
           - label: 'Meta'
+
             required: false
             name: 'meta'
             widget: 'object'
@@ -88,6 +90,7 @@ collections:
                 widget: boolean,
                 required: false,
               }
+
 
 
 
