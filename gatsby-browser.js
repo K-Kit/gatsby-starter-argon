@@ -23,6 +23,6 @@ import './static/css/argon-design-system-react.css'
 import Navbar from "./src/components/Navbars/DemoNavbar"
 
 export const wrapRootElement = ({element}) => <>
-    <Navbar />
+
     {element}
 </>;

@@ -20,6 +20,31 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - label: 'Meta'
+          required: false
+          name: 'meta'
+          widget: 'object'
+          fields:
+            - { label: Title, name: title, widget: string, required: false }
+            - {
+              label: Description,
+              name: description,
+              widget: text,
+              required: false,
+            }
+            - {
+              label: Canonical Link,
+              name: canonicalLink,
+              widget: string,
+              required: false,
+            }
+            - {
+              label: Noindex,
+              name: noindex,
+              widget: boolean,
+              required: false,
+            }
+
 
   - name: "pages"
     label: "Pages"
@@ -39,6 +64,31 @@ collections:
             { label: link, name: link, widget: string, optional: true},
             ]
           }
+          - label: 'Meta'
+              required: false
+              name: 'meta'
+              widget: 'object'
+              fields:
+                - { label: Title, name: title, widget: string, required: false }
+                - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+                - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+                - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }
+
 
 
             # icon title description, tags, linkto

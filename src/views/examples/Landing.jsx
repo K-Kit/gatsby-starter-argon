@@ -54,13 +54,13 @@ const Landing = (props) => {
     featureSection,
       customerSection,
       section3,
-      formSection,
       menuButtons,
       team,
       teamHeader,
       preForm,
       isEditor=false,
       points,
+      form
 
       
   } = props
@@ -461,7 +461,7 @@ const Landing = (props) => {
                         </div>
                         <h5 className="text-white mt-3">{item.heading}</h5>
                         <p className="text-white mt-3">
-                          {item.description}
+                          {item.subHeading}
                         </p>
                       </Col>
                   )
@@ -492,9 +492,9 @@ const Landing = (props) => {
                 <Col lg="8">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
-                      <h4 className="mb-1">Want to work with us?</h4>
+                      <h4 className="mb-1">{form.heading}</h4>
                       <p className="mt-0">
-                        Your project is very important to us.
+                        {form.subHeading}
                       </p>
                       <form  name="contact-landing" method="POST" data-netlify="true">
                         <input type="hidden" name="form-name" value="contact-landing" />

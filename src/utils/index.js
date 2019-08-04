@@ -6,3 +6,6 @@ export const isEditor = () => {
         return false
     }
 }
+
+export const isBrowser = () => typeof window !== 'undefined';
+

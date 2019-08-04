@@ -7,6 +7,7 @@ import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 import Landing from '../views/examples/Landing'
 
+import Navbar from "../components/Navbars/DemoNavbar";
 // TODO content component to make markdown preview compatible
 export const IndexPageTemplate = ({
   image,
@@ -61,6 +62,10 @@ const IndexPage = (props) => {
               heading
               subHeading
             }
+          }
+          form {
+            heading
+            subHeading
           }
           teamHeader {
             heading
@@ -134,6 +139,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
+      <Navbar transparent />
       <Landing
         {...frontmatter}
       />
