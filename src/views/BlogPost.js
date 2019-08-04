@@ -82,7 +82,7 @@ const BlogPost = ({
                   {/*</a>*/}
 
                   <div className="article-content" >
-                    <PreviewCompatibleContent content={content} isEditor={isEditor()} />
+                    <PreviewCompatibleContent content={content} isEditor={false} />
                   </div>
                   <br />
                   <div className="article-footer">
