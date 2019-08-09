@@ -1,7 +1,7 @@
 # Gatsby + Argon Design System + netlifyCMS starter
 gatsby-starter-argon.netlify.com
 
-This starter kit combines the wonderful stylings of the [Argon Design System](creative-tim.com), the blazing-fast speeds of [GatsbyJS](GatsbyJS.com), ease of use of [NetlifyCMS](netlifycms.com)!
+This starter kit combines the wonderful stylings of the [Argon Design System](creative-tim.com), the blazing-fast speeds of [GatsbyJS](GatsbyJS.com), ease of use of [NetlifyCMS](netlifycms.org)!
 
 - serverless
 - automagic staging
@@ -11,6 +11,20 @@ This starter kit combines the wonderful stylings of the [Argon Design System](cr
 To deploy to netlify all you need is a free netlify account and a github account to store the repo.  To get started click the link below:
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/K-Kit/gatsby-starter-argon&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+### Pre-requisites:
+- Github or gitlab account (free)
+- A Netlify Account (free)
+
+### Getting started (development)
+
+Option A (reccomended):
+
+1) Deploy to netlify (link above)
+2) Wait for netlify to build your site
+3) After the site is built you will have a new repo, clone it 
+4) Navigate to the directory in the command line and install with yarn or npm
+5) `yarn start` to get started with development!
 
 ### Usage:
 
@@ -22,7 +36,7 @@ Now if you navigate to '/admin' you will be able to log in and manage your colle
 
 To customize the schema for your site, edit `/static/admin/config.yml`
 
-For more details on how to customize the CMS check out the [netlifyCMS]() documentation.
+For more details on how to customize the CMS check out the [netlifyCMS](https://www.netlifycms.org) documentation.
 
 For more on templating go check out the docs at [GatsbyJS] where they have a plethora of high quality tutorials, documentation and recipes.
 
