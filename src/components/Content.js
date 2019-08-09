@@ -4,7 +4,7 @@ import {isEditor} from "../utils";
 import ReactMarkdown from "react-markdown";
 
 export const PreviewCompatibleContent = ({ content, ...props}) => {
-    let editor = props.isEditor || isEditor()
+    let editor = isEditor()
   return (
       <>
         { editor ?
