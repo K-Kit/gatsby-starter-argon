@@ -65,6 +65,36 @@ collections:
             { label: link, name: link, widget: string, optional: true},
             ]
           }
+          - label: 'Meta'
+
+            required: false
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                label: Description,
+                name: description,
+                widget: text,
+                required: false,
+              }
+              - {
+                label: Canonical Link,
+                name: canonicalLink,
+                widget: string,
+                required: false,
+              }
+              - {
+                label: Noindex,
+                name: noindex,
+                widget: boolean,
+                required: false,
+              }
+
+
+
+
+            # icon title description, tags, linkto
           - {label: DemoCards, name: demoCards, widget: list, fields: [
           {label: Icon, name: icon, widget: string},
           {label: Color, name: color, widget: string},
@@ -125,30 +155,4 @@ collections:
                 widget: string
               - name: heading
                 widget: string
-
-          - label: 'Meta'
-            required: false
-            name: 'meta'
-            widget: 'object'
-            fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - {
-                label: Description,
-                name: description,
-                widget: text,
-                required: false,
-              }
-              - {
-                label: Canonical Link,
-                name: canonicalLink,
-                widget: string,
-                required: false,
-              }
-              - {
-                label: Noindex,
-                name: noindex,
-                widget: boolean,
-                required: false,
-              }
-
 
