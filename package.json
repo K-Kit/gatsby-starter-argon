@@ -39,7 +39,7 @@
     "react-markdown": "^4.1.0",
     "reactstrap": "^8.0.1",
     "remark": "^11.0.0",
-    "remark-html": "^10.0.0",
+    "remark-html": "^13.0.2",
     "uuid": "^3.2.1"
   },
   "keywords": [
